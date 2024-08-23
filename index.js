@@ -50,7 +50,12 @@ function handleFormSubmit(event) {
   
     deleteBtn.addEventListener("click", function (event) {
       userList.removeChild(event.target.parentElement);
-      localStorage.removeItem(userDetails.email);
+     axios
+      .delete(
+        `https://crudcrud.com/api/5519d12fca344fd6b10665aea264519d/appointmentData/66c6f99a6b920b03e879fab0`
+      )
+      .then(() => console.log("User deleted"))
+      .catch((error) => console.log(error));
     });
   
     editBtn.addEventListener("click", function (event) {
